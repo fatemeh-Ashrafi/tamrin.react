@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "fatemeh",
+      "lastname": "ashrafi",
+      "email": "fatemeh@gmail.com",
+      "phone": "1-770-736-8031 x56442"
+    },
+    {
+      "id": 2,
+      "username": "zahra",
+      "lastname": "alborzi",
+      "email": "zahra@april.biz",
+      "phone": "1-770-736-8031 x56442"
+    },
+    {
+      "id": 3,
+      "username": "maryam",
+      "lastname": "shjaei",
+      "email": "maryam@april.biz",
+      "phone": "1-770-736-8031 x56442"
+    },
+    {
+      "username": "mina",
+      "email": "mina@gmail.com",
+      "phone": "1-770-736-8031 ",
+      "id": 4
+    }
+  ]
+}
