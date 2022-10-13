@@ -1,58 +1,64 @@
-import React, { Fragment } from 'react';
-import {  Button} from 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Data} from './Data';
-import {useNavigate} from 'react-router-dom'
+// import './Post.css'
+import React, { useState } from 'react';
+import { useSelector , useDispatch } from 'react-redux';
+import { addPost ,deletePost ,updateDiscriptionPost } from './Features/Users';
 
 
 function Post() {
 
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const postList = useSelector((state) => state.posts.value);
 
-    const handelDelete = (id) =>{
-        let index = Data.map((e)=>{
-            return e.id
-        }).indexOf(id);
+    const [title,setTitle] = useState('');
+    const [description,setDescription] = useState('');
+    const [discriptionUpdate,setDiscriptionUpdate] = useState("")
 
-        Data.splice(index,1);
-        navigate('/')
-    }
 
-console.log("Loggg")
   return (
-    <Fragment>
-        <div style={{margin:"10rem"}}>
-            <table striped bordered hover size ="sm">
-                <thead>
-                     <tr>
-                        <th>Post Title</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        // Data && Data.length > 0 ?
-                        Data.map((item, idx)=>{
-                            return(
-                                <tr key={idx}>
-                                    <td>{item.title}</td>
-                                    <td>{item.description}</td>
-                                    <td>
-                                        <Button onClick={()=> alert(item.id)}>Edit</Button>
-                                        <Button onClick={()=> handelDelete(item.id)}>Delete</Button>
-                                    </td>
-                                </tr>
-                            )
-                        })
-                        // : "no data"
-                    }
-                </tbody>
-            </table>
+    <div className='App'>
+        <div className='addUser'>
+
+            <input type="text" placeholder='title...'
+            onChange={(e)=>{setTitle(e.target.value)}} />
+
+            <input type="text" placeholder='discription...' 
+            onChange={(e)=>{setDescription(e.target.value)}} />
+
+            <button onClick={()=>
+                {dispatch(addPost({id:postList[postList.length - 1].id +1 ,
+                title ,
+                description
+                }))}}>
+                Add User
+            </button>
+        </div>
+        <div className='displayUsers'>
+            {postList.map((user)=>{
+                return(
+                    <div>
+                        Title:<h3>{user.title}</h3>
+                        Discription: <h3>{user.discription}</h3>
+                        
+                        <input type="text" placeholder=' new discription...' 
+                        onChange={(e)=>{setDiscriptionUpdate(e.target.value)}} 
+                        />
+
+                        <button onClick={()=>{dispatch(deletePost({id:user.id}))}}>
+                            delete
+                        </button>
+                        
+                        <button onClick={()=>
+                            {dispatch(updateDiscriptionPost({id:user.id , discription:discriptionUpdate }))}}>
+                            update
+                        </button>
+
+                    </div>
+                )
+            })}
         </div>
       
-    </Fragment>
+    </div>
   )
 }
 
-export default Post;
+export default Post

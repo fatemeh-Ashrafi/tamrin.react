@@ -3,7 +3,7 @@ import React from 'react'
 function Home() {
   return (
     <div>
-      home
+      <h1>welcom instagram</h1>
     </div>
   )
 }

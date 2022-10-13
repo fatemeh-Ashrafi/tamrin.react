@@ -5,10 +5,10 @@ import LoginUser from './Login/LoginUser';
 import Theme from './Setting/Theme';
 import Navbar from './style/Navbar';
 import Home from './Home'
-import Post from './Post/Post';
 import NotFound from './Error/NotFound';
+import Post from './Post/Post';
 
-console.log("Log")
+
 
 function App() {
   return (
