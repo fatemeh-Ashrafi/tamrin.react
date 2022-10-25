@@ -7,10 +7,10 @@ export const FontSizeSlice = createSlice({
   initialState:{value:initialState},
   reducers: {
     addFont: (state) => {
-      state.font +=2;
+      state.value.font +=2;
     },
     removeFont:(state)=>{
-        state.font -=2
+        state.value.font -=2;
     },
   },
 });

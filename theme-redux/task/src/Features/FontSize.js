@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addFont,removeFont } from './FontSizeSlice';
 const FontSize =()=> {
   const dispatch = useDispatch();
-  const fontSizee = useSelector((state) => state.value.fontSize);
-  console.log('fontSizee')
+  const fontSizee = useSelector((state) =>state.fontSize.value.font);
+  console.log(fontSizee)
   return (
     <div>
         <p>{fontSizee}</p>
@@ -18,30 +18,3 @@ const FontSize =()=> {
   )
 }
 export default FontSize;
-
-
-
-
-
-// import './Theme.css'
-// import { useSelector, useDispatch } from "react-redux";
-// import { addFont,removeFont } from './FontSizeSlice';
-
-// export default function FontSize () {
-//   const dispatch = useDispatch();
-//   // const darkTheme = useSelector((state) => state.theme.value.darkTheme);
-//   const fontSizee = useSelector((state) => state.value.fontSize);
-
-
-//   // console.log(darkTheme);
-//   // console.log(state)
-//   return (
-//     <div className={` ${fontSizee ? "add" : "remove"}`}>
-//         <h1 style={{fontSize : `${fontSizee}px`}}>hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h1>
-//       <button onClick={()=>{dispatch(addFont())}}> +Toggle Theme</button>
-//       <button onClick={()=>{dispatch(removeFont())}}> - Toggle Theme</button>
-
-//     </div>
-//   );
-// }
-
