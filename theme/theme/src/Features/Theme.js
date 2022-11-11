@@ -7,10 +7,8 @@ export default function Theme() {
   const darkTheme = useSelector((state) => state.theme.value.darkTheme);
 
   console.log(darkTheme);
-  // console.log(state)
   return (
     <div className={` ${darkTheme ? "dark" : "light"}`}>
-        <h1>hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h1>
       <button onClick={()=>{dispatch(toggleTheme())}}>Toggle Theme</button>
     </div>
   );

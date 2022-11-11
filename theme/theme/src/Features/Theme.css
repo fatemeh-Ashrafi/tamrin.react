@@ -1,18 +1,18 @@
-.light >* {
-    /* background-color: #f3ebf6 ;
-    color: rgb(10, 237, 237); */
-    font-size: large;
+.light  {
+     background-color: #f3ebf6 ;
+    color: rgb(237, 89, 10); 
+     /* font-size: large; */
   }
   
-.dark > * {
+.dark  {
     background-color: #171718;
     color: #f3ebf6;
-    font-size: small;
+    /* font-size: small; */
   }
 
-  .app{
-    background-color: brown;
-  }
+  /* .app{
+    background-color: brown; 
+   }  */
 
 
 
